@@ -1,0 +1,12 @@
+<%= render 'layouts/header'%>
+
+<h1>All Posts</h1>
+
+<% @posts.each do |post| %>
+  <div class="post">
+    <p><%= post.body %></p>
+    <% if !cookies.signed[:remember_token].nil? %>
+      <p>Author: <%= post.author %></p> 
+    <% end %>
+  </div>
+<% end %>
