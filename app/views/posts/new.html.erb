@@ -1,0 +1,12 @@
+<h1>New Post</h1>
+
+<%= form_for(@post, url: create_post_path) do |f| %>
+  
+  <%= f.label :body %><br>
+  <%= f.text_field :body %><br>
+
+  <%= hidden_field_tag :author, @current_user.name %>
+
+  <%= f.submit "Create Post" %>
+
+<% end %>
